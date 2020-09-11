@@ -16,7 +16,14 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: 
+          - "*"
 server:
   port: 8082
 #Eureka
@@ -24,3 +31,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+      
+application:
+  version: user-service-v1
